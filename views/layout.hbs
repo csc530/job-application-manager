@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" />
+		<script src="https://kit.fontawesome.com/f6ae6b9ec4.js" crossorigin="anonymous" async></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+			integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+		<title>{{title}}</title>
+	</head>
+
+	<body >
+		<header class="header hero mx-auto my-auto">
+			<nav class="navbar">
+				<a href="/" class="navbar-item">Home</a>
+				<a href="/application" class="navbar-item">Applications</a>
+				<a href="/indeed" class="navbar-item">Search Indeed</a>
+				<a href="/auth/login" class="navbar-item">Log in</a>
+				<a href="/auth/register" class="navbar-item">Sign up</a>
+			</nav>
+		</header>
+		<main class="content container is-fluid">
+			{{{body}}}
+		</main>
+		<footer class="footer is-fixed-bottom">
+			<p>Created and maintained by <em>Christofer Cousins</em></p>
+			<ul class="is-flex block is-justify-content-flex-start">
+				<li class="p-2"><a href="https://github.com/csc530/"><i class="icon fa-brands fa-github-alt is-medium" title="My GitHub" ></i></a></li>
+				<li class="p-2"><a href="https://github.com/csc530/COMP2068#labs-and-assignments"><i title="Page source" class="icon fa-solid fa-code is-medium"></i></a></li>
+			</ul>
+		</footer>
+	</body>
+
+
+</html>

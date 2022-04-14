@@ -1,0 +1,47 @@
+{
+  "name": "job-tracker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "indeed-job-scraper": "^3.1.2",
+    "mongoose": "^6.2.7",
+    "morgan": "~1.9.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "ws": "^8.5.0"
+  },
+  "description": "A web app to track, manage, and follow up on applied and desired job postings.",
+  "main": "./bin/www",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc530/COMP2068.git"
+  },
+  "keywords": [
+    "jobs",
+    "job-application",
+    "mongoDB",
+    "mongo-compass",
+    "JS",
+    "Express",
+    "handlebars",
+    "Bulma",
+    "job-tracker"
+  ],
+  "author": "Christofer Cousins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc530/COMP2068/issues"
+  },
+  "homepage": "https://github.com/csc530/COMP2068#readme"
+}
