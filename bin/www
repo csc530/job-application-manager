@@ -113,7 +113,9 @@ wss.on('connection', function connection(ws) {
 });
 setInterval(() => {
 	wss.clients.forEach((client) => {
-	  client.send(JSON.stringify(config));
-	  client.send(JSON.stringify(getJobsList()));
+	  client.send(JSON.stringify({
+		  title: 'Search Indeed jobs',
+		  error: 'idek what happened',
+	  }));
 	});
   }, 1000);
