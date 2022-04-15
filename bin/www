@@ -111,3 +111,8 @@ wss.on('connection', function connection(ws) {
 			.then(jobs => ws.send(JSON.stringify(jobs)));
 	});
 });
+setInterval(() => {
+	wss.clients.forEach((client) => {
+	  client.send(new Date().toTimeString());
+	});
+  }, 1000);
