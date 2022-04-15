@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const add = document.createElement('a');
 				add.classList.add('button', 'is-primary', 'is-fullwidth');
 				add.textContent = 'Add';
-				add.href = '/indeed/add?title=' + job['job-title'] + '&link=' + job['job-link'];
+				add.href = '/indeed/add?title=' + job['job-title'] + '&link=' + job['job-link']+ '&description=' + job['job-snippet'];
 				actions.appendChild(add);
 			}
 

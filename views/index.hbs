@@ -1,4 +1,24 @@
 <h1 class="title">{{title}}</h1>
-<p>Welcome to your {{title}}</p>
+<p>Welcome to your <em>Application Tracker</em></p>
 
 <p>Please login to get started logging and analyzing your job search applications and results.</p>
+
+<h2>Some <em>real</em> example applications monitored with <em>Application Tracker</em></h2>
+<table class="table is-hoverable is-fullwidth">
+	<thead>
+		<tr>
+			<th>Job title</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+
+<tbody>
+    {{#each applications as |app|}}
+        <tr>
+            <td>{{app.jobTitle}}</td>
+            <td>{{app.description}}</td>
+        </tr>
+    {{/each}}
+</tbody>
+
+</table>

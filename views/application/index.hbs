@@ -9,6 +9,7 @@
 		<thead>
 			<tr>
 				<th>Job title</th>
+				<th>Description</th>
 				<th>Date posted</th>
 				<th>Date applied</th>
 				<th>Action taken</th>
@@ -21,6 +22,7 @@
 			{{#each applications as |app|}}
 				<tr>
 					<td>{{app.jobTitle}}</td>
+					<td>{{app.description}}</td>
 					<td>{{toShortDate app.postedDate}}</td>
 					<td>{{toShortDate app.applicationDate}}</td>
 					<td>
