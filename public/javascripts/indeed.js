@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.log('Connected to ' + url);
 		socket.onmessage = message => {
 			const jobs = JSON.parse(message.data);
-			console.log(jobs);
 			if(jobs.length === 0)
 				loadingTxt.textContent = 'No jobs found';
 			else{

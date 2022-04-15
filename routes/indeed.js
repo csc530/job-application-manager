@@ -4,23 +4,6 @@ const passport = require('passport');
 
 const Application  = require('../models/application');
 
-// *  websocket package for server side websocket
-const{Server} = require('ws');
-
-/* GET  jobs */
-router.get('/', (req, res, next) => {
-	const searchTitle = req.query.search;
-	console.log(searchTitle ? searchTitle : 'Search indeed jobs');
-	// res.redirect('/indeed/loading');
-	const renderParams = {
-		title: 'Search Indeed jobs',
-		jobs: [],
-		user: req.user,
-	};
-	res.render('indeed/index', renderParams);
-
-});
-
 /* GET loading page */
 router.get('/loading', function (req, res, next) {
 	res.render('loading', {title: 'Loading application', user: req.user});
