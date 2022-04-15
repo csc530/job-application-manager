@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const loadingTxt = document.querySelector('section#loading h1.loader__text');
 	const loadingSection = document.querySelector('section#loading');
 
-	const url = window.location.protocol.replace('http','ws') + '//' + window.location.hostname + ':8080';
+	const url = window.location.protocol.replace('http','ws') + '//' + window.location.hostname + ':' + window.location.port;
 	const socket = new WebSocket(url);
 
 	socket.onopen = event => {
