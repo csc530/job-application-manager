@@ -1,26 +1,48 @@
 <h1 class="title">{{title}}</h1>
+
 <form action="register" method="post" class="box" id="registerForm">
 	<label for="email" class="label">Email</label>
-	<input type="email" placeholder="email@domain.ca" spellcheck="true" class="input" autofocus required id="email" name="email" autocomplete="email" aria-autocomplete="list"/>
+	<input
+		type="email"
+		placeholder="email@domain.ca"
+		spellcheck="true"
+		class="input"
+		autofocus
+		required
+		id="email"
+		name="email"
+		autocomplete="email"
+		aria-autocomplete="list"
+	/>
 	<label for="password" class="label">Password</label>
 	<input type="password" placeholder="Password" spellcheck="true" class="input" required id="password" name="password" autocomplete="new-password" />
 	<label for="passwordConfirm" class="label">Confirm password</label>
 	{{! TODO: add js to change visual that passwords do not match and check for it }}
 	<input type="password" placeholder="Confirm password" spellcheck="true" class="input" required id="passwordConfirm" name="passwordConfirm" />
 	<button type="submit" class="button is-primary" id="submitButton">Register</button>
+	<fieldset class="block mt-5">
+		<legend class="level-item level-right subtitle">3<sup>rd</sup> party login providers</legend>
+		<section class="">
+			<a href="google" title="Sign in with Google"><i class="icon fa-brands fa-google is-large"></i></a>
+			<a href="github" title="Sign in with Github"><i class="icon fa-brands fa-github-alt is-large"></i></a>
+		</section>
+	</fieldset>
 </form>
+
 <dialog class="modal is-small" id="dialogMismatchPassword">
-<div class="modal-card">
-	<header class="modal-card-head">
-		<p class="modal-card-title">Error</p>
-		<button class="delete is-large" aria-label="close"></button>
-	</header>
-	<section class="modal-card-body">
-		<p>Passwords do not match</p>
-	</section>
-	<footer class="modal-card-foot">
-		<button class="button is-success">OK</button>
-	</footer>
-</div>
+	<div class="modal-card">
+		<header class="modal-card-head">
+			<p class="modal-card-title">Error</p>
+			<button class="delete is-large" aria-label="close"></button>
+		</header>
+		<section class="modal-card-body">
+			<p>Passwords do not match</p>
+		</section>
+		<footer class="modal-card-foot">
+			<button class="button is-success">OK</button>
+		</footer>
+	</div>
 </dialog>
+
+
 <script src="/javascripts/checkPasswords.js"></script>

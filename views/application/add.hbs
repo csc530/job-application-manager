@@ -1,18 +1,35 @@
+<script src="/javascripts/addAction.js"></script>
 <h1 class="title">{{title}}</h1>
 <form class="box" action="add" method="post">
 	<label for="jobTitle" class="label">Job title</label>
 	<input type="text" placeholder="CEO" spellcheck="true" class="input" autofocus required id="jobTitle" name="jobTitle" />
+
 	<label for="applicationDate" class="label">Date applied</label>
 	<input type="date" id="applicationDate" class="input" name="applicationDate" />
+
 	<label for="postedDate" class="label">Date posted</label>
 	<input type="date" id="postedDate" class="input" name="postedDate" />
+
 	<label for="action" class="label">Action</label>
-	<select class="select is-multiple input has-text-centered" id="action" name="action" multiple>
-		{{!-- Todo add action to db with js --}}
+	<select class="select is-multiple input has-text-centered" id="actions" name="action" multiple>
+		{{! Todo add action to db with js }}
 		<option class="" id="addAction" onclick="addAction" value="NULL">Add action</option>
 		{{#each actions as |action|}}
 			<option class="is-uppercase">{{action.name}}</option>
 		{{/each}}
 	</select>
+
+	<label for="response" class="label">Response</label>
+	<select class="select input has-text-centered" id="responses" name="response">
+		<option value="NULL">Select a response</option>
+		<option>Accepted</option>
+		<option>Rejected</option>
+		<option>Pending</option>
+	</select>
+
+	<label for="" class="label">Job link</label>
+	<input type="text" placeholder="https://www.google.com" class="input" id="jobLink" name="jobLink" autocomplete="url" aria-autocomplete="both" />
+	
 	<button type="submit" class="button is-primary" id="submitButton">Submit</button>
+
 </form>

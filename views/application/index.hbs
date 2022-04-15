@@ -4,25 +4,53 @@
 
 {{#if applications}}
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>Job title</th>
-			<th>Date posted</th>
-			<th>Date applied</th>
-			<th>Action taken</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{#each applications as |app|}}
-		<tr>
-			<td>{{app.jobTitle}}</td>
-			<td>{{app.postedDate}}</td>
-			<td>{{app.applicationDate}}</td>
-			<td>{{app.action}}</td>
-		</tr>
-		{{/each}}
-	</tbody>
-</table>
+	<table class="table table is-fullwidth is-hoverable">
+
+		<thead>
+			<tr>
+				<th>Job title</th>
+				<th>Date posted</th>
+				<th>Date applied</th>
+				<th>Action taken</th>
+				<th>Response</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{{#each applications as |app|}}
+				<tr>
+					<td>{{app.jobTitle}}</td>
+					<td>{{toShortDate app.postedDate}}</td>
+					<td>{{toShortDate app.applicationDate}}</td>
+					<td>
+						<ul id="is-unstyled">
+							{{#each app.action}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					</td>
+					<td>{{app.response}}</td>
+					<td>
+						{{#if app.jobLink}}
+						<a href="{{app.jobLink}}" target="_blank" class="button is-primary is-fullwidth">To Job</a>
+						{{/if}}
+						<a class="button is-warning is-fullwidth" href="/application/edit/{{app._id}}" title="Edit application">
+							<i class="fa-solid fa-edit icon"></i>
+						</a>
+						<a
+							class="button is-danger is-fullwidth"
+							title="Delete application"
+							href="/application/delete/{{app._id}}"
+							onclick="return confirm('Are you sure you want to delete this')"
+						>
+							<i class="fa-solid fa-minus icon"></i>
+						</a>
+					</t>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
 
 {{/if}}

@@ -1,25 +1,39 @@
 <script src="javascripts/indeed.js"></script>
 <h1 class="title">{{title}}</h1>
-<form action="" method="get" class="form block">
+<form class="form block" id="form">
 	<label>Search</label>
 	<input type="text" id="search" placeholder="Search" name="search" class="input" />
 </form>
-<table id="results" class="table  is-striped is-hoverable is-fullwidth">
-	<thead>
-		<th>Job title</th>
-		<th>Description snippet</th>
-    <th>Salary</th>
-		<th>Date posted</th>
-	</thead>
-	<tbody>
-		{{#each jobs}}
-    <tr>
-      <td>{{this.job-title}}</td>
-      <td>{{this.job-snippet}}</td>
-      <td>{{this.job-salary}}</td>
-      <td>{{this.post-date}}</td>
-    </tr>
-    </a>
-		{{/each}}
-	</tbody>
-</table>
+
+<div class="table-container">
+	<table id="results" class="table  is-striped is-hoverable is-fullwidth">
+		<thead>
+			<th>Job title</th>
+			<th>Company</th>
+			<th>Description snippet</th>
+			<th>Location</th>
+			<th>Salary</th>
+			<th>Date posted</th>
+			<th>Actions</th>
+		</thead>
+		<tbody>
+			{{#each jobs}}
+			<tr>
+				<td>{{this.job-title}}</td>
+				<td>{{this.job-snippet}}</td>
+				<td>{{this.job-salary}}</td>
+				<td>{{this.post-date}}</td>
+			</tr>
+			</a>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+
+<section id="loading" class="is-hidden">
+	<div class="loader--bounce-ball title">
+		<h1 class="loader__ball"></h1><!-- /.loader__ball -->
+
+		<h1 class="loader__text"></h1><!-- /.loader__text -->
+	</div><!-- /.loader -->
+</section>

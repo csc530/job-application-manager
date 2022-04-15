@@ -1,0 +1,105 @@
+:root {
+	--primary: rgb(33, 162, 201);
+	--ball-size: 2em;
+	--ball-fall: calc(var(--ball-size) * 2.5);
+}
+
+body {
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00b7ff;
+}
+
+/* ? have select match Bulma form style */
+select.select {
+	height: 5.5em;
+	padding-bottom: calc(0.5em - 1px);
+	padding-left: calc(0.75em - 1px);
+	padding-right: calc(0.75em - 1px);
+	padding-top: calc(0.5em - 1px);
+}
+/* Give spacing to submit button in a form */
+form button[type="submit"] {
+	margin-top: 1em;
+}
+
+/* Keep the footer at the bottom */
+html,
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+body > footer {
+	margin-top: auto;
+}
+
+/* Beautify dialog border*/
+dialog {
+	border: solid 2.5px #ddd;
+	border-radius: 5px;
+}
+
+/*
+* CSS-pre loader from http://htmlburger.com/sample-parser?file=https://gitlab.com/fxground/effects/raw/master/page-loading/css-loaders/loaders-2/src/assets/css/_module.loader.css
+* of https://fxground.com/fx/css-loaders-vol-2/ */
+/*  Bounce Ball  */
+
+.loader--bounce-ball {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.loader--bounce-ball .loader__text {
+	margin-left: calc(var(--ball-size)*0.55);
+	color: var(--primary);
+	text-transform: uppercase;
+}
+.loader--bounce-ball .loader__ball {
+	width: var(--ball-size);
+	height: var(--ball-fall);
+	position: relative;
+	top: - calc((var(--ball-size) * 0.125));
+}
+.loader--bounce-ball .loader__ball:before {
+	content: "";
+	width: var(--ball-size);
+	height: var(--ball-size);
+	background-color: var(--primary);
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	animation: bounceBall 0.4325s alternate infinite ease;
+}
+
+/* Ripped from https://effects.fxground.com/page-loading/css-loaders/loaders-2/build/effect.html */
+@keyframes bounceBall {
+	0% {
+		height: calc(var(--ball-size) * 0.375);
+		top: calc(var(--ball-fall) * 0.825);
+		/* top: 85%; */
+		border-radius: 60px 60px 20px 20px;
+		-webkit-transform: scaleX(2);
+		transform: scaleX(2);
+	}
+	35% {
+		/* height: 16px; */
+		border-radius: 50%;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+	to {
+		top: 0;
+	}
+}
+
+ul#is-unstyled {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
