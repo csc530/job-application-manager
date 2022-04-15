@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const search = document.getElementById('search');
 	const form = document.getElementById('form');
 	const tbody = document.querySelector('table#results tbody');
-
+	const table = document.querySelector('table#results')
 
 	// * loading preloader elements
 	const loadingTxt = document.querySelector('section#loading h1.loader__text');
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			else{
 				loadingSection.classList.add('is-hidden');
 				updateTable(jobs);
+				sorttable.makeSortable(table);
 			}
 		};
 	};
